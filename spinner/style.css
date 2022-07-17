@@ -1,0 +1,156 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #101020;
+	color: aliceblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+#spinner {
+	width: 200px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	font-size: 1.5rem;
+	position: relative;
+	cursor: progress;
+}
+
+#loading {
+	display: contents;
+}
+
+#loading span {
+	animation: jump 3000ms ease-in-out infinite;
+}
+
+#loading span:nth-child(1) {
+	animation-delay: 0.1s;
+}
+
+#loading span:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+#loading span:nth-child(3) {
+	animation-delay: 0.3s;
+}
+
+#loading span:nth-child(4) {
+	animation-delay: 0.4s;
+}
+
+#loading span:nth-child(5) {
+	animation-delay: 0.5s;
+}
+
+#loading span:nth-child(6) {
+	animation-delay: 0.6s;
+}
+
+#loading span:nth-child(7) {
+	animation-delay: 0.7s;
+}
+
+.spinner-edge {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 12px solid transparent;
+	mix-blend-mode: lighten;
+}
+
+.spinner-edge-red {
+	border-left-color: crimson;
+	animation: rotation 1500ms ease-in 0ms infinite;
+}
+
+.spinner-edge-green {
+	border-top-color: darkcyan;
+	animation: rotation 2500ms ease-out 0ms infinite;
+}
+
+.spinner-edge-blue {
+	border-right-color: dodgerblue;
+	animation: rotation 3500ms ease-in-out 0ms infinite;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes jump {
+	0% {
+		transform: translateY(0px)
+	}
+
+	2.5% {
+		transform: translateY(2px)
+	}
+
+	12.5% {
+		transform: translateY(-10px)
+	}
+
+	22.5% {
+		transform: translateY(2px)
+	}
+
+	25% {
+		transform: translateY(0px)
+	}
+}
+
+#spinner2 {
+	width: 200px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	position: relative;
+	cursor: progress;
+}
+
+#spinner2::before,
+#spinner2::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 12px solid transparent;
+	mix-blend-mode: lighten;
+}
+
+#spinner2::before {
+	border-right-color: dodgerblue;
+	animation: rotation 3500ms ease-in-out 0ms infinite;
+}
+
+#spinner2::after {
+	border-left-color: crimson;
+	animation: rotation 1500ms ease-in 0ms infinite;
+}
+
+#spinner2:nth-child(1)::before {
+	border-top-color: darkcyan;
+	animation: rotation 2500ms ease-out 0ms infinite;
+}
