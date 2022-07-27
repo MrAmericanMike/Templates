@@ -14,18 +14,6 @@ body {
 	height: 100vh;
 }
 
-#spinner {
-	width: 200px;
-	height: 200px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	font-size: 1.5rem;
-	position: relative;
-	cursor: progress;
-}
-
 #loading {
 	display: contents;
 }
@@ -62,7 +50,22 @@ body {
 	animation-delay: 0.7s;
 }
 
-.spinner-edge {
+#spinner {
+	width: 200px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	position: relative;
+	cursor: progress;
+}
+
+#spinner::before,
+#spinner::after,
+#loading::before,
+#loading::after {
+	content: "";
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -71,20 +74,26 @@ body {
 	mix-blend-mode: lighten;
 }
 
-.spinner-edge-red {
-	border-left-color: crimson;
-	animation: rotation 1500ms ease-in 0ms infinite;
+#spinner::before {
+	border-right-color: dodgerblue;
+	animation: rotation 1500ms ease-in-out 0ms infinite;
 }
 
-.spinner-edge-green {
+#spinner::after {
+	border-left-color: crimson;
+	animation: rotation 2000ms ease-in 0ms infinite;
+}
+
+#loading::before {
 	border-top-color: darkcyan;
 	animation: rotation 2500ms ease-out 0ms infinite;
 }
 
-.spinner-edge-blue {
-	border-right-color: dodgerblue;
-	animation: rotation 3500ms ease-in-out 0ms infinite;
+#loading::after {
+	border-bottom-color: darkorange;
+	animation: rotation 3000ms ease-out 0ms infinite;
 }
+
 
 @keyframes rotation {
 	0% {
@@ -116,41 +125,4 @@ body {
 	25% {
 		transform: translateY(0px)
 	}
-}
-
-#spinner2 {
-	width: 200px;
-	height: 200px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 1.5rem;
-	position: relative;
-	cursor: progress;
-}
-
-#spinner2::before,
-#spinner2::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-	border: 12px solid transparent;
-	mix-blend-mode: lighten;
-}
-
-#spinner2::before {
-	border-right-color: dodgerblue;
-	animation: rotation 3500ms ease-in-out 0ms infinite;
-}
-
-#spinner2::after {
-	border-left-color: crimson;
-	animation: rotation 1500ms ease-in 0ms infinite;
-}
-
-#spinner2:nth-child(1)::before {
-	border-top-color: darkcyan;
-	animation: rotation 2500ms ease-out 0ms infinite;
 }

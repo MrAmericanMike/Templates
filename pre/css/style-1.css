@@ -1,5 +1,14 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
 body {
-	background-color: #202030;
+	background-color: #101020;
+	width: 100vw;
+	height: 100vh;
+	padding: 12px;
 }
 
 a {
