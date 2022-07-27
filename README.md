@@ -4,5 +4,8 @@
 
 > Each branch offers a different template
 
+* Playground
+* tRPC
 * Vite
+* VSCode
 
