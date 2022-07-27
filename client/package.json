@@ -1,0 +1,19 @@
+{
+	"name": "trpc",
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"typescript": "^4.6.4",
+		"vite": "^3.0.0"
+	},
+	"dependencies": {
+		"@picocss/pico": "^1.5.3",
+		"@trpc/client": "^9.26.2",
+		"koalacodes": "^0.0.3"
+	}
+}
